@@ -20,6 +20,7 @@ const Form = ({ addItem }) => {
   };
 
   return (
+    // Form is now a controlled form. The value (item name) is managed by React via State
     <section className="form">
       <h3 className="title">Grocery Bud</h3>
       <form onSubmit={handleAddItem}>
