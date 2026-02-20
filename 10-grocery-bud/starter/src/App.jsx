@@ -31,7 +31,7 @@ const App = () => {
     toast.success("Item Added to List");
   };
 
-  // rm item based on id
+  // Remove item based on id
   const removeItem = (id) => {
     const newItems = items.filter((item) => item.id !== id);
     setItems(newItems);
