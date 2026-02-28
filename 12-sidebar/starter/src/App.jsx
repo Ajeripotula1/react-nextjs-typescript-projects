@@ -1,4 +1,14 @@
+import { links, social } from "./data";
+import Home from "./Home";
+import Sidebar from "./Sidebar";
+import Modal from "./Modal";
 const App = () => {
-  return <h2>Sidebar Starter</h2>;
+  return (
+    <>
+      <Home />
+      <Sidebar />
+      <Modal />
+    </>
+  );
 };
 export default App;
