@@ -1,4 +1,4 @@
-import { links, social } from "./data";
+// import { links, social } from "./data";
 import Home from "./Home";
 import Sidebar from "./Sidebar";
 import Modal from "./Modal";

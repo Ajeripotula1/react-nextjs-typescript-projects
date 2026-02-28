@@ -272,26 +272,18 @@ Project CSS
   padding: 0;
   box-sizing: border-box;
 }
+.body {
+  background-color: #c5e5fc;
+}
 
 main {
   min-height: 100vh;
   display: flex;
-  /* flex-direction: column; */
   justify-content: center;
   align-items: center;
-  /* position: relative; */
-}
-.sidebar-toggle {
-  font-size: 2rem;
-  border-color: transparent;
-  background: transparent;
-  cursor: pointer;
-  position: fixed;
-  top: 2rem;
-  left: 3rem;
-  color: #49a6e9;
 }
 
+/* Modal */
 .modal-toggle {
   color: white;
   background-color: #49a6e9;
@@ -311,6 +303,7 @@ main {
   justify-content: center;
   align-items: center;
 }
+
 .modal-container {
   background-color: white;
   width: 90vw;
@@ -325,11 +318,88 @@ main {
   position: absolute;
   top: 1rem;
   right: 1rem;
-  background-color: transparent;
-  border-color: transparent;
+}
+.x-btn {
   color: red;
   font-size: 2rem;
+  background-color: transparent;
+  border-color: transparent;
   cursor: pointer;
   text-transform: capitalize;
   font-weight: bold;
+}
+
+/* Sidebar */
+.sidebar-toggle {
+  font-size: 2rem;
+  border-color: transparent;
+  background: transparent;
+  cursor: pointer;
+  position: fixed;
+  top: 2rem;
+  left: 3rem;
+  color: #49a6e9;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  background-color: white;
+  height: 100%;
+  width: 100%;
+  display: grid; /* Create grid and assign most space to links */
+  grid-template-rows: auto 1fr auto;
+  row-gap: 1rem;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem;
+  align-items: center;
+}
+.links {
+  display: flex;
+  flex-direction: column;
+  /* gap: 0.5rem; */
+  text-transform: capitalize;
+  font-size: 1.25rem;
+}
+.link-single {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  letter-spacing: 2px;
+}
+.hide {
+  display: none;
+}
+li {
+  color: rgb(108, 104, 104);
+}
+li :hover {
+  background-color: #c5e5fc;
+}
+a {
+  text-decoration: none;
+  color: rgb(102, 97, 97);
+}
+.socials {
+  display: flex;
+  font-size: 1.5rem;
+  margin: 2rem;
+
+  justify-content: space-evenly;
+}
+
+.socials a {
+  color: #49a6e9;
+}
+/* Responsive Design */
+@media screen and (min-width: 676px) {
+  .sidebar {
+    width: 400px;
+  }
+  .modal-container {
+    width: 60vh;
+  }
 }

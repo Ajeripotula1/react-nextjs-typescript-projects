@@ -1,4 +1,4 @@
-import { Children, createContext, useContext, useState } from "react";
+import { createContext, useContext, useState } from "react";
 
 // Creating our context
 export const AppContext = createContext();
@@ -22,6 +22,7 @@ export const AppProvider = ({ children }) => {
     setIsModalOpen(true);
   };
   const closeModal = () => {
+    console.log("closing modal");
     setIsModalOpen(false);
   };
 
