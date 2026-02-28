@@ -300,9 +300,36 @@ main {
   border-color: transparent;
   /* margin: auto; */
 }
-.modal {
+.modal-overlay {
   position: fixed;
-  background-color: yellow;
-  top: 50vh;
-  left: 50%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal-container {
+  background-color: white;
+  width: 90vw;
+  height: 30vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.25rem;
+  position: relative;
+}
+.modal-container button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: transparent;
+  border-color: transparent;
+  color: red;
+  font-size: 2rem;
+  cursor: pointer;
+  text-transform: capitalize;
+  font-weight: bold;
 }
