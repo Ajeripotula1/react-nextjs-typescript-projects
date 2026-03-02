@@ -6,12 +6,14 @@ const globalContext = createContext();
 // 2. Create Context Provider which will manage the global context values
 export const GlobalContextProvider = ({ children }) => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [pageId, setPageId] = useState(null);
   const openSidebar = () => setIsSidebarOpen(true);
   const closeSidebar = () => setIsSidebarOpen(false);
+
   // Provide Global Context to all Child components
   return (
     <globalContext.Provider
-      value={{ isSidebarOpen, openSidebar, closeSidebar }}
+      value={{ isSidebarOpen, openSidebar, closeSidebar, pageId, setPageId }}
     >
       {children}
     </globalContext.Provider>
