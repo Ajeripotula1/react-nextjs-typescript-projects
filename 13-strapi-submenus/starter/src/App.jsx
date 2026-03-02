@@ -1,4 +1,16 @@
+import Navbar from "./Navbar";
+import Hero from "./Hero";
+import Sidebar from "./Sidebar";
 const App = () => {
-  return <h2>Strapi Starter</h2>;
+  return (
+    <main>
+      {/* Contains Logo and Button to open and close Sidebar */}
+      <Navbar />
+      {/* Description of App */}
+      <Hero />
+      {/* Sidebar contains pages and their links */}
+      <Sidebar />
+    </main>
+  );
 };
 export default App;

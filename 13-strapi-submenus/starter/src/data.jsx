@@ -8,82 +8,82 @@ import {
   FaCodiepie,
   FaDocker,
   FaGithubSquare,
-} from 'react-icons/fa';
-import { nanoid } from 'nanoid';
+} from "react-icons/fa";
+import { nanoid } from "nanoid";
 
-const sublinks = [
+const subLinks = [
   {
     pageId: nanoid(),
-    page: 'product',
+    page: "product",
     links: [
       {
         id: nanoid(),
-        label: 'community',
+        label: "community",
         icon: <Fa500Px />,
-        url: '/product/community',
+        url: "/product/community",
       },
       {
         id: nanoid(),
-        label: 'content',
+        label: "content",
         icon: <FaAccusoft />,
-        url: '/product/content',
+        url: "/product/content",
       },
       {
         id: nanoid(),
-        label: 'roles',
+        label: "roles",
         icon: <FaAdversal />,
-        url: '/product/roles',
+        url: "/product/roles",
       },
     ],
   },
   {
     pageId: nanoid(),
-    page: 'solutions',
+    page: "solutions",
     links: [
       {
         id: nanoid(),
-        label: 'developers',
+        label: "developers",
         icon: <FaAvianex />,
-        url: '/solutions/developers',
+        url: "/solutions/developers",
       },
       {
         id: nanoid(),
-        label: 'content managers',
+        label: "content managers",
         icon: <FaBitcoin />,
-        url: '/solutions/content-managers',
+        url: "/solutions/content-managers",
       },
       {
         id: nanoid(),
-        label: 'business teams',
+        label: "business teams",
         icon: <FaBtc />,
-        url: '/solutions/business teams',
+        url: "/solutions/business teams",
       },
       {
         id: nanoid(),
-        label: 'ecommerce',
+        label: "ecommerce",
         icon: <FaCodiepie />,
-        url: '/solutions/ecommerce',
+        url: "/solutions/ecommerce",
       },
     ],
   },
   {
-    page: 'resources',
+    page: "resources",
     pageId: nanoid(),
     links: [
       {
         id: nanoid(),
-        label: 'starters',
+        label: "starters",
         icon: <FaDocker />,
-        url: '/resources/starters',
+        url: "/resources/starters",
       },
       {
         id: nanoid(),
-        label: 'showcase',
+        label: "showcase",
         icon: <FaGithubSquare />,
-        url: '/resources/showcase',
+        url: "/resources/showcase",
       },
     ],
   },
 ];
 
-export default sublinks;
+export default subLinks;
