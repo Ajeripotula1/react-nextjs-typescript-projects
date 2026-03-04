@@ -10,16 +10,17 @@ const NavLinks = () => {
         return (
           <button
             key={subLink.pageId}
-            onMouseOver={() => {
+            className="nav-link"
+            onMouseEnter={() => {
               // update pageId Global context
               setPageId(subLink.pageId);
               console.log(subLink.page, pageId);
             }}
-            onMouseLeave={() => {
-              // clear the pageId global context
-              console.log("Leaving");
-              setPageId(null);
-            }}
+            // onMouseLeave={() => {
+            //   // clear the pageId global context
+            //   console.log("Leaving");
+            //   setPageId(null);
+            // }}
           >
             {subLink.page}
           </button>
