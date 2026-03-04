@@ -195,10 +195,12 @@ Responsive Design
   .submenu-center {
     display: block;
     position: fixed;
-    top: 6rem;
+    top: 3rem;
     padding: 2rem;
     width: 90vw;
-    /* background-color: white; */
+    max-width: 1120px;
+    left: 5rem;
+    /* background-color: yellow; */
     display: flex;
     justify-content: center;
   }

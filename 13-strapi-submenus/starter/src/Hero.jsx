@@ -2,7 +2,7 @@ import React from "react";
 
 const Hero = () => {
   return (
-    <section className="hero-center">
+    <section className="hero-center" style={{ backgroundColor: "" }}>
       <div className="hero">
         <h1>manage any content anywhere</h1>
         <p>

@@ -4,10 +4,16 @@ import NavLinks from "./Navlinks";
 import { useGlobalContext } from "./GlobalContext";
 const Navbar = () => {
   // use custom hook to get global context value
-  const { openSidebar } = useGlobalContext();
+  const { openSidebar, setPageId } = useGlobalContext();
   console.log(openSidebar);
+  const handleMouse = (e) => {
+    // if not scrolling over NavLinks, hide sidebar
+    if (!e.target.classList.contains("nav-link")) {
+      setPageId(null);
+    }
+  };
   return (
-    <nav className="nav">
+    <nav className="nav" onMouseOver={handleMouse}>
       <div className="nav-center">
         <h3 className="logo">strapi</h3>
         <button className="open-sidebar" onClick={openSidebar}>
