@@ -23,11 +23,33 @@ const initialState = {
 const GlobalContextProvider = ({ children }) => {
   // Mange State logic w/ useReducer
   const [state, dispatch] = useReducer(reducer, initialState);
-  console.log("YO", state.cart);
+  const clearCart = () => {
+    console.log("clearing cart");
+    dispatch({ type: CLEAR_CART });
+  };
+
+  const removeItem = (id) => {
+    console.log("removing item from cart", id);
+    dispatch({ type: REMOVE, payload: { id: id } });
+  };
+  const increaseAmount = (id) => {
+    dispatch({ type: INCREASE, payload: { id: id } });
+  };
+  const decreaseAmount = (id) => {
+    dispatch({ type: DECREASE, payload: { id: id } });
+  };
 
   return (
     // spread our state values and pass to children
-    <GlobalContext.Provider value={{ ...state }}>
+    <GlobalContext.Provider
+      value={{
+        ...state,
+        clearCart,
+        removeItem,
+        increaseAmount,
+        decreaseAmount,
+      }}
+    >
       {children}
     </GlobalContext.Provider>
   );
