@@ -1,4 +1,10 @@
-import { createContext, useContext, useReducer, useState } from "react";
+import {
+  createContext,
+  useContext,
+  useEffect,
+  useReducer,
+  useState,
+} from "react";
 import reducer from "./reducer";
 import {
   CLEAR_CART,
@@ -9,6 +15,8 @@ import {
   DISPLAY_ITEMS,
 } from "./actions";
 import cartItems from "./data";
+import { getTotal } from "./utils";
+const url = "https://www.course-api.com/react-useReducer-cart-project";
 // Create our global Context //
 const GlobalContext = createContext();
 
@@ -16,13 +24,16 @@ const initialState = {
   loading: false,
   //   cart: [...cartItems], //cart items is arr of obj, lets make arr of objs
   // challenge: create map from arr
-  cart: new Map(cartItems.map((item) => [item.id, item])),
+  cart: new Map(),
 };
 
 // Global Context Provider to whole app //
 const GlobalContextProvider = ({ children }) => {
   // Mange State logic w/ useReducer
   const [state, dispatch] = useReducer(reducer, initialState);
+
+  // get totals
+  const { totalAmount, totalCost } = getTotal(state.cart);
   const clearCart = () => {
     console.log("clearing cart");
     dispatch({ type: CLEAR_CART });
@@ -38,6 +49,19 @@ const GlobalContextProvider = ({ children }) => {
   const decreaseAmount = (id) => {
     dispatch({ type: DECREASE, payload: { id: id } });
   };
+  const fetchData = async () => {
+    // dispatch loading
+    dispatch({ type: LOADING });
+    const response = await fetch(
+      "https://www.course-api.com/react-useReducer-cart-project",
+    );
+    const cart = await response.json();
+    console.log("cart", cart);
+    dispatch({ type: DISPLAY_ITEMS, payload: { cart: cart } });
+  };
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   return (
     // spread our state values and pass to children
@@ -48,6 +72,8 @@ const GlobalContextProvider = ({ children }) => {
         removeItem,
         increaseAmount,
         decreaseAmount,
+        totalAmount,
+        totalCost,
       }}
     >
       {children}

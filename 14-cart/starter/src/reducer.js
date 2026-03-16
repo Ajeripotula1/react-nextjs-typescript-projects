@@ -63,6 +63,13 @@ const reducer = (state, action) => {
       newCopy.set(payload.id, itemToDecreaseUpdated);
       return { ...state, cart: newCopy };
     }
+    case LOADING: {
+      return { ...state, loading: true };
+    }
+    case DISPLAY_ITEMS: {
+      const newCart = new Map(payload.cart.map((item) => [item.id, item]));
+      return { ...state, loading: false, cart: newCart };
+    }
   }
 
   throw new Error("No matching action type:", action.type);
